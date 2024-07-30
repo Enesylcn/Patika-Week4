@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore.Storage.Json;
 using Newtonsoft.Json;
+using Patika.WebApi.Services;
 
 namespace Patika.WebApi.Middlewares
 {
     public class CustomExeptionMiddleware
     {
         private readonly RequestDelegate _next;
-        public CustomExeptionMiddleware(RequestDelegate next)
+        private readonly ILoggerService _loggerService;
+        public CustomExeptionMiddleware(RequestDelegate next, ILoggerService loggerService)
         {
             _next = next;
+            _loggerService = loggerService;
         }
         public async Task Invoke(HttpContext context)
         {
@@ -27,7 +30,7 @@ namespace Patika.WebApi.Middlewares
                 await _next(context);
                 watch.Stop();
                 message = "[Response] HTTP " + context.Request.Method + " - " + context.Request.Path + " responded " + context.Response.StatusCode + " in " + watch.ElapsedMilliseconds + " ms";
-                Console.WriteLine(message);
+                _loggerService.Write(message);
             }
             catch (Exception ex)
             {
@@ -44,7 +47,7 @@ namespace Patika.WebApi.Middlewares
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
             string message = "[Error] HTTP " + context.Request.Method + " - " + context.Response.StatusCode + " Error Message " + ex.Message + " in " + watch.ElapsedMilliseconds + " ms";
-            Console.WriteLine(message);
+            _loggerService.Write(message);
 
 
             var result = JsonConvert.SerializeObject(new { error = ex.Message }, Formatting.None);

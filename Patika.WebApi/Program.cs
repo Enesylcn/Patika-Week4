@@ -6,6 +6,7 @@ using Microsoft.OpenApi.Models;
 using Patika.WebApi.Common;
 using Patika.WebApi.DBOperations;
 using Patika.WebApi.Middlewares;
+using Patika.WebApi.Services;
 using Patika.WebApi.Validation;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,6 +27,8 @@ builder.Services.AddDbContext<BookStoreDbContext>(options => options.UseInMemory
 // builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 var config = new MapperConfiguration(cfg => { cfg.AddProfile(new MappingProfile()); });
 builder.Services.AddSingleton(config.CreateMapper());
+
+builder.Services.AddSingleton<ILoggerService, ConsoleLogger>();
 
 var app = builder.Build();
 
