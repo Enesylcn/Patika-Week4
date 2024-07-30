@@ -1,9 +1,0 @@
-
-
-namespace Patika.WebApi.Validation
-{
-    public class UpdateBookCommandValidator : AbstractValidator<UpdateBookCommand>
-    {
-
-    }
-}

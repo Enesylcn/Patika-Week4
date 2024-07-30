@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Patika.WebApi.BookOperations.CreateBook;
 using Patika.WebApi.BookOperations.DeleteBook;
@@ -9,6 +10,7 @@ using Patika.WebApi.BookOperations.GetBookDetail;
 using Patika.WebApi.BookOperations.GetBooks;
 using Patika.WebApi.BookOperations.UpdateBook;
 using Patika.WebApi.DBOperations;
+using Patika.WebApi.Validation;
 using static Patika.WebApi.BookOperations.CreateBook.CreateBookCommand;
 using static Patika.WebApi.BookOperations.GetBookDetail.GetBookDetailQuery;
 using static Patika.WebApi.BookOperations.UpdateBook.UpdateBookCommand;
@@ -42,6 +44,8 @@ namespace Patika.WebApi.Controllers
                 GetBookDetailQuery query = new GetBookDetailQuery(_context);
 
                 query.BookId = id;
+                GetBookDetailQueryValidator validator = new GetBookDetailQueryValidator();
+                validator.ValidateAndThrow(query);
                 result = query.Handle();
                 return Ok(result);
             }
@@ -59,6 +63,8 @@ namespace Patika.WebApi.Controllers
             try
             {
                 command.Model = newBook;
+                CreateBookCommanValidator createBookCommanValidator = new CreateBookCommanValidator();
+                createBookCommanValidator.ValidateAndThrow(command);
                 command.Handle();
             }
             catch (Exception ex)
@@ -76,6 +82,9 @@ namespace Patika.WebApi.Controllers
                 DeleteBookCommand command = new DeleteBookCommand(_context);
 
                 command.BookId = id;
+
+                DeleteBookCommanValidator deleteBookCommanValidator = new DeleteBookCommanValidator();
+                deleteBookCommanValidator.ValidateAndThrow(command);
                 command.Handle();
             }
             catch (Exception ex)
@@ -94,6 +103,9 @@ namespace Patika.WebApi.Controllers
 
                 command.BookId = id;
                 command.Model = updatedBook;
+
+                UpdateBookCommandValidator updateBookCommandValidator = new UpdateBookCommandValidator();
+                updateBookCommandValidator.ValidateAndThrow(command);
                 command.Handle();
             }
             catch (Exception ex)
