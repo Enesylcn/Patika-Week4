@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Patika.WebApi.DBOperations;
 
@@ -11,9 +12,12 @@ namespace Patika.WebApi.BookOperations.CreateBook
     {
         public CreateBookModel Model { get; set; }
         private readonly BookStoreDbContext _dbContext;
-        public CreateBookCommand(BookStoreDbContext dbContext)
+        private readonly IMapper _mapper;
+
+        public CreateBookCommand(BookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
         public void Handle()
         {
@@ -22,13 +26,7 @@ namespace Patika.WebApi.BookOperations.CreateBook
             if (book is not null)
                 throw new InvalidOperationException("Book already exists");
 
-            book = new Book
-            {
-                Title = Model.Title,
-                GenreId = Model.GenreId,
-                PublishDate = Model.PublishDate,
-                PageCount = Model.PageCount
-            };
+            book = _mapper.Map<Book>(Model);
             _dbContext.Books.Add(book);
             _dbContext.SaveChanges();
         }

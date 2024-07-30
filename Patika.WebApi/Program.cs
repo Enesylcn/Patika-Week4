@@ -1,7 +1,11 @@
+using System.Reflection;
+using AutoMapper;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Patika.WebApi.Common;
 using Patika.WebApi.DBOperations;
+using Patika.WebApi.Middlewares;
 using Patika.WebApi.Validation;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +23,9 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddDbContext<BookStoreDbContext>(options => options.UseInMemoryDatabase("BookStoreDB"));
 
-
+// builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+var config = new MapperConfiguration(cfg => { cfg.AddProfile(new MappingProfile()); });
+builder.Services.AddSingleton(config.CreateMapper());
 
 var app = builder.Build();
 
@@ -43,6 +49,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
+app.UseCustomExeptionMiddleware();
 app.MapControllers();
 
 app.Run();
