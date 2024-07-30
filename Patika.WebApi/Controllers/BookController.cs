@@ -15,6 +15,8 @@ using static Patika.WebApi.BookOperations.UpdateBook.UpdateBookCommand;
 
 namespace Patika.WebApi.Controllers
 {
+    [ApiController]
+    [Route("[controller]s")]
     public class BookController : ControllerBase
     {
         private readonly BookStoreDbContext _context;
@@ -47,8 +49,6 @@ namespace Patika.WebApi.Controllers
             {
                 return BadRequest(ex.Message);
             }
-
-            return Ok(result);
 
         }
 
