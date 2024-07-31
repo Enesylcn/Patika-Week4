@@ -22,7 +22,7 @@ namespace Patika.WebApi.Application.BookOperations.Queries.GetBookDetail
         }
         public BookDetailViewModel Handle()
         {
-            var book = _context.Books.Include(x => x.Genre).Where(book => book.Id == BookId).SingleOrDefault();
+            var book = _context.Books.Include(x => x.Genre).Include(x => x.Author).Where(book => book.Id == BookId).SingleOrDefault();
             if (book is null)
                 throw new InvalidOperationException("Book not found");
             BookDetailViewModel vm = _mapper.Map<BookDetailViewModel>(book);
@@ -35,6 +35,8 @@ namespace Patika.WebApi.Application.BookOperations.Queries.GetBookDetail
             public int PageCount { get; set; }
             public string PublishDate { get; set; }
             public string Genre { get; set; }
+            public string Author { get; set; }
+
         }
     }
 }

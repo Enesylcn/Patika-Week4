@@ -44,7 +44,6 @@ namespace Patika.WebApi.Controllers
         public IActionResult GetBookById(int id)
         {
             BookDetailViewModel result;
-
             GetBookDetailQuery query = new GetBookDetailQuery(_context, _mapper);
 
             query.BookId = id;

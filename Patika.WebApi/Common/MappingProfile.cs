@@ -21,8 +21,12 @@ namespace Patika.WebApi.Common
         public MappingProfile()
         {
             CreateMap<CreateBookModel, Book>();
-            CreateMap<Book, BookDetailViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name));
-            CreateMap<Book, BookViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name));
+            CreateMap<Book, BookDetailViewModel>()
+            .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name))
+            .ForMember(dest => dest.Author, opt => opt.MapFrom(src => src.Author.Name));
+            CreateMap<Book, BookViewModel>()
+            .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name))
+            .ForMember(dest => dest.Author, opt => opt.MapFrom(src => src.Author.Name));
             CreateMap<Genre, GenresViewModel>();
             CreateMap<Genre, GenreDetailViewModel>();
             CreateMap<CreateAuthorModel, Author>();

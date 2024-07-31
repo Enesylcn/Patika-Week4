@@ -22,7 +22,7 @@ namespace Patika.WebApi.Application.BookOperations.Queries.GetBooks
 
         public List<BookViewModel> Handle()
         {
-            var booksList = _context.Books.Include(x => x.Genre).OrderBy(x => x.Id).ToList<Book>();
+            var booksList = _context.Books.Include(x => x.Genre).Include(x => x.Author).OrderBy(x => x.Id).ToList<Book>();
             List<BookViewModel> vm = _mapper.Map<List<BookViewModel>>(booksList);
             return vm;
         }
@@ -33,6 +33,8 @@ namespace Patika.WebApi.Application.BookOperations.Queries.GetBooks
             public int PageCount { get; set; }
             public string PublishDate { get; set; }
             public string Genre { get; set; }
+            public string Author { get; set; }
+
         }
     }
 }

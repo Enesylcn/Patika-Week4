@@ -12,5 +12,8 @@ namespace Patika.WebApi.Entities
         public string Surname { get; set; }
 
         public DateTime BirthDate { get; set; }
+
+        public ICollection<Book> Books { get; set; }
+
     }
 }
