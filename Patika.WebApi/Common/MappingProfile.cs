@@ -8,6 +8,11 @@ using static Patika.WebApi.Application.GenreOperations.Queries.GetGenreDetail.Ge
 using static Patika.WebApi.Application.BookOperations.Commands.CreateBook.CreateBookCommand;
 using static Patika.WebApi.Application.BookOperations.Queries.GetBookDetail.GetBookDetailQuery;
 using static Patika.WebApi.Application.BookOperations.Queries.GetBooks.GetBooksQuery;
+using Patika.WebApi.Application.AuthorOperations.Commands.CreateAuthor;
+using Patika.WebApi.Entities;
+using static Patika.WebApi.Application.AuthorOperations.Commands.CreateAuthor.CreateAuthorCommand;
+using static Patika.WebApi.Application.AuthorOperations.Queries.GetAuthors.GetAuthorsQuery;
+using static Patika.WebApi.Application.AuthorOperations.Queries.GetAuthorDetail.GetAuthorDetailQuery;
 
 namespace Patika.WebApi.Common
 {
@@ -20,6 +25,12 @@ namespace Patika.WebApi.Common
             CreateMap<Book, BookViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name));
             CreateMap<Genre, GenresViewModel>();
             CreateMap<Genre, GenreDetailViewModel>();
+            CreateMap<CreateAuthorModel, Author>();
+            CreateMap<Author, AuthorViewModel>();
+            CreateMap<Author, AuthorDetailViewModel>();
+
+
+
 
 
         }

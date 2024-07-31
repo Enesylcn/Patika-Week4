@@ -1259,23 +1259,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\enes\\.nuget\\packages\\": {},
+    "C:\\Users\\enesyalcin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\enes\\Desktop\\project\\Patika_Odev\\Patika-Week4\\Patika.WebApi\\Patika.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\enesyalcin\\Desktop\\PaparaDoc\\Patika_Hafta3\\Patika-Week4\\Patika.WebApi\\Patika.WebApi.csproj",
       "projectName": "Patika.WebApi",
-      "projectPath": "C:\\Users\\enes\\Desktop\\project\\Patika_Odev\\Patika-Week4\\Patika.WebApi\\Patika.WebApi.csproj",
-      "packagesPath": "C:\\Users\\enes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\enes\\Desktop\\project\\Patika_Odev\\Patika-Week4\\Patika.WebApi\\obj\\",
+      "projectPath": "C:\\Users\\enesyalcin\\Desktop\\PaparaDoc\\Patika_Hafta3\\Patika-Week4\\Patika.WebApi\\Patika.WebApi.csproj",
+      "packagesPath": "C:\\Users\\enesyalcin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\enesyalcin\\Desktop\\PaparaDoc\\Patika_Hafta3\\Patika-Week4\\Patika.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\enes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\enesyalcin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1363,7 +1363,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -1372,7 +1372,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requires AutoMapper (= 12.0.1) but version AutoMapper 13.0.1 was resolved.",
+      "message": "Bağımlılık kısıtlaması dışında algılanan paket sürümü: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1, AutoMapper (= 12.0.1) gerektiriyor ancak sürüm AutoMapper 13.0.1 çözümlenmiş.",
       "libraryId": "AutoMapper",
       "targetGraphs": [
         "net8.0"
