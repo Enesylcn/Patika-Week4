@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using Patika.WebApi.BookOperations.CreateBook;
-using Patika.WebApi.BookOperations.DeleteBook;
-using Patika.WebApi.BookOperations.GetBookDetail;
-using Patika.WebApi.BookOperations.GetBooks;
-using Patika.WebApi.BookOperations.UpdateBook;
+using Patika.WebApi.Application.BookOperations.Commands.CreateBook;
+using Patika.WebApi.Application.BookOperations.Commands.DeleteBook;
+using Patika.WebApi.Application.BookOperations.Queries.GetBookDetail;
+using Patika.WebApi.Application.BookOperations.Queries.GetBooks;
+using Patika.WebApi.Application.BookOperations.Commands.UpdateBook;
 using Patika.WebApi.DBOperations;
 using Patika.WebApi.Validation;
-using static Patika.WebApi.BookOperations.CreateBook.CreateBookCommand;
-using static Patika.WebApi.BookOperations.GetBookDetail.GetBookDetailQuery;
-using static Patika.WebApi.BookOperations.UpdateBook.UpdateBookCommand;
+using static Patika.WebApi.Application.BookOperations.Commands.CreateBook.CreateBookCommand;
+using static Patika.WebApi.Application.BookOperations.Queries.GetBookDetail.GetBookDetailQuery;
+using static Patika.WebApi.Application.BookOperations.Commands.UpdateBook.UpdateBookCommand;
 
 namespace Patika.WebApi.Controllers
 {

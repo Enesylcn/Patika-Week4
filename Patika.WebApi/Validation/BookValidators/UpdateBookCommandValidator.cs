@@ -1,5 +1,5 @@
 using FluentValidation;
-using Patika.WebApi.BookOperations.UpdateBook;
+using Patika.WebApi.Application.BookOperations.Commands.UpdateBook;
 
 
 namespace Patika.WebApi.Validation

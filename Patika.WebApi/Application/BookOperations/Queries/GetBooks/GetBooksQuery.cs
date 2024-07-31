@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Patika.WebApi.Common;
 using Patika.WebApi.DBOperations;
 
-namespace Patika.WebApi.BookOperations.GetBooks
+namespace Patika.WebApi.Application.BookOperations.Queries.GetBooks
 {
     public class GetBooksQuery
     {
@@ -21,7 +22,7 @@ namespace Patika.WebApi.BookOperations.GetBooks
 
         public List<BookViewModel> Handle()
         {
-            var booksList = _context.Books.OrderBy(x => x.Id).ToList<Book>();
+            var booksList = _context.Books.Include(x => x.Genre).OrderBy(x => x.Id).ToList<Book>();
             List<BookViewModel> vm = _mapper.Map<List<BookViewModel>>(booksList);
             return vm;
         }
