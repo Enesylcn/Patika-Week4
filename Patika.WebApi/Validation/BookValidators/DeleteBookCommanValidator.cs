@@ -1,5 +1,5 @@
 using FluentValidation;
-using Patika.WebApi.BookOperations.DeleteBook;
+using Patika.WebApi.Application.BookOperations.Commands.DeleteBook;
 
 
 namespace Patika.WebApi.Validation

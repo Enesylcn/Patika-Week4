@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Patika.WebApi.Common;
 using Patika.WebApi.DBOperations;
 
-namespace Patika.WebApi.BookOperations.GetBookDetail
+namespace Patika.WebApi.Application.BookOperations.Queries.GetBookDetail
 {
     public class GetBookDetailQuery
     {
@@ -21,7 +22,7 @@ namespace Patika.WebApi.BookOperations.GetBookDetail
         }
         public BookDetailViewModel Handle()
         {
-            var book = _context.Books.Where(book => book.Id == BookId).SingleOrDefault();
+            var book = _context.Books.Include(x => x.Genre).Where(book => book.Id == BookId).SingleOrDefault();
             if (book is null)
                 throw new InvalidOperationException("Book not found");
             BookDetailViewModel vm = _mapper.Map<BookDetailViewModel>(book);

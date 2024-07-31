@@ -6,7 +6,7 @@ using AutoMapper;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Patika.WebApi.DBOperations;
 
-namespace Patika.WebApi.BookOperations.CreateBook
+namespace Patika.WebApi.Application.BookOperations.Commands.CreateBook
 {
     public class CreateBookCommand
     {

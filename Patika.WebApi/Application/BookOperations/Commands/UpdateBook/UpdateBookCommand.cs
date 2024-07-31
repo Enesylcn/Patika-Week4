@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Patika.WebApi.DBOperations;
 
-namespace Patika.WebApi.BookOperations.UpdateBook
+namespace Patika.WebApi.Application.BookOperations.Commands.UpdateBook
 {
     public class UpdateBookCommand
     {
