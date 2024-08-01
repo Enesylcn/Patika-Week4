@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TX9lXMCxMi8vJMbuEX2OgUgELPD76mJYyabnjo23i/GmkyxxuVvqaRojTqSsqpJ+tC1AlpzegelK+0j6NRm4bg==",
+  "dgSpecHash": "1b5bOsh02vrtsBMJl6OBoZxQSdaDDXXFL3C0L/Ei14A24Nx7rflrL7d3Aj1P5imOSems9xB9ANQvRyDN81yi/w==",
   "success": true,
-  "projectFilePath": "c:\\Users\\enes\\Desktop\\project\\Patika_Odev\\Patika-Week4\\Patika.WebApi\\Patika.WebApi.csproj",
+  "projectFilePath": "C:\\Users\\enes\\Desktop\\project\\Patika_Odev\\Patika-Week4\\Patika.WebApi\\Patika.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\enes\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\enes\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
