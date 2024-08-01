@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patika.WebApi", "Patika.WebApi\Patika.WebApi.csproj", "{D42DEE7A-514A-4ECB-A5B8-2BFA91AF0405}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{19FF3918-8168-4E1A-AA39-AC66F62D4883}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patika.WebApi.UnitTests", "Tests\Patika.WebApi.UnitTests\Patika.WebApi.UnitTests.csproj", "{B0574DE7-2DEA-4862-B084-15D74BC01497}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,12 @@ Global
 		{D42DEE7A-514A-4ECB-A5B8-2BFA91AF0405}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D42DEE7A-514A-4ECB-A5B8-2BFA91AF0405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D42DEE7A-514A-4ECB-A5B8-2BFA91AF0405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0574DE7-2DEA-4862-B084-15D74BC01497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0574DE7-2DEA-4862-B084-15D74BC01497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0574DE7-2DEA-4862-B084-15D74BC01497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0574DE7-2DEA-4862-B084-15D74BC01497}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B0574DE7-2DEA-4862-B084-15D74BC01497} = {19FF3918-8168-4E1A-AA39-AC66F62D4883}
 	EndGlobalSection
 EndGlobal

@@ -3,6 +3,7 @@ using AutoMapper;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Patika.WebApi;
 using Patika.WebApi.Common;
 using Patika.WebApi.DBOperations;
 using Patika.WebApi.Middlewares;
@@ -23,8 +24,7 @@ builder.Services.AddSwaggerGen(c =>
 
 
 builder.Services.AddDbContext<BookStoreDbContext>(options => options.UseInMemoryDatabase("BookStoreDB"));
-
-// builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddScoped<IBookStoreDbContext>(provider => provider.GetService<BookStoreDbContext>());
 var config = new MapperConfiguration(cfg => { cfg.AddProfile(new MappingProfile()); });
 builder.Services.AddSingleton(config.CreateMapper());
 

@@ -14,9 +14,9 @@ namespace Patika.WebApi.Application.GenreOperations.Commands.UpdateGenre
         public UpdateGenreModel Model { get; set; }
         public int GenreId { get; set; }
 
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
-        public UpdateGenreCommand(BookStoreDbContext context)
+        public UpdateGenreCommand(IBookStoreDbContext context)
         {
             _context = context;
         }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Patika.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+090174a56d4767c30f32fa32cfe00241ca5c65f3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8355517e8b28d2ec7343aaeb4eebf04f1a373f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Patika.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Patika.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
